@@ -42,7 +42,7 @@
 *                                                                    *
 **********************************************************************
 *                                                                    *
-*       RTT version: 7.88i                                           *
+*       RTT version: 7.94a                                           *
 *                                                                    *
 **********************************************************************
 
@@ -329,14 +329,19 @@ int _sys_ensure(FILEHANDLE hFile) {
 */
 #if __ARMCC_VERSION >= 6190000
 void _sys_tmpnam(char * pBuffer, int FileNum, unsigned MaxLen) {
+  (void)pBuffer;
+  (void)FileNum;
+  (void)MaxLen;
+  return;      // Not implemented
+}
 #else
 int _sys_tmpnam(char * pBuffer, int FileNum, unsigned MaxLen) {
-#endif
   (void)pBuffer;
   (void)FileNum;
   (void)MaxLen;
   return (1);  // Not implemented
 }
+#endif
 
 /*********************************************************************
 *
