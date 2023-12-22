@@ -1,0 +1,2 @@
+Config/*
+!Config/SEGGER_RTT_Conf_template.h
